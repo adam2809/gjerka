@@ -8,8 +8,8 @@
 #define ANALOG_OUTPUT_RANGE 256
 #define SPEED_LED_PIN_COUNT 3
 
-#define MIN_DIFFICULTY 2000
-#define MAX_DIFFICULTY 1000
+#define MIN_DIFFICULTY 1000
+#define MAX_DIFFICULTY 600
 
 #define Y_0 2
 #define Y_1 3
