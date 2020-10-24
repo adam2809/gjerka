@@ -148,10 +148,8 @@ void loop() {
     propagateWalls();
     lastWallPropagation = millis();
   }
-
-//  TODO wall generation not working
-  Serial.println(walls.getCount());
-  if(walls.getCount() < WALLS_COUNT){
+  
+  if(walls.nbRecs() < WALLS_COUNT){
     buildNewWall();
   }
 
@@ -247,15 +245,19 @@ void buildNewWall(){
   }
 
   wallMaterial->structure = generateWallStructure();
+  wallMaterial->xPos = 7;
 
   walls.push(&wallMaterial);
 }
 
 long generateWallStructure(){
   byte structure = 0;
+  
   for(int i = 0;i < 8;i++){
     structure = (structure + random(0,2)) << 1;
   }
+
+  return structure;
 }
 
 void restart() {
